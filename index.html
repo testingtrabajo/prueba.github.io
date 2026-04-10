@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISTQB CTFL v4.0 | Resumen Esencial</title>
+    <title>ISTQB CTFL v4.0 | Guía de Estudio Detallada</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -18,6 +18,7 @@
             --warning: #f59e0b;
             --border: #e2e8f0;
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --radius: 12px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,12 +26,12 @@
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
             padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -40,68 +41,61 @@
             padding-bottom: 1.5rem;
             border-bottom: 2px solid var(--border);
         }
-        header h1 {
-            font-size: 2.2rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
+        header h1 { font-size: 2.4rem; color: var(--primary-dark); margin-bottom: 0.4rem; }
+        header p { color: var(--text-light); font-size: 1.15rem; }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 1rem;
             margin-bottom: 2.5rem;
         }
         .stat-card {
             background: var(--card);
-            padding: 1.2rem;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: var(--radius);
             text-align: center;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
         }
-        .stat-card strong { display: block; font-size: 1.8rem; color: var(--primary); }
-        .stat-card span { color: var(--text-light); font-size: 0.95rem; }
+        .stat-card strong { display: block; font-size: 1.6rem; color: var(--primary); }
+        .stat-card span { color: var(--text-light); font-size: 0.9rem; }
 
         h2 {
             color: var(--primary-dark);
-            margin: 2rem 0 1rem;
-            padding-left: 0.5rem;
+            margin: 2.5rem 0 1rem;
+            padding-left: 0.6rem;
             border-left: 4px solid var(--accent);
         }
-        h3 { color: var(--text); margin: 1.2rem 0 0.6rem; }
-        p, ul, ol { margin-bottom: 1rem; }
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 0.4rem; }
+        h3 { color: var(--text); margin: 1.2rem 0 0.5rem; font-size: 1.15rem; }
+        h4 { color: var(--secondary); margin: 0.8rem 0 0.3rem; font-size: 1rem; }
+        p, ul, ol { margin-bottom: 0.8rem; }
+        ul { padding-left: 1.4rem; }
+        li { margin-bottom: 0.3rem; }
+        li strong { color: var(--text); }
 
         .card {
             background: var(--card);
-            border-radius: 12px;
+            border-radius: var(--radius);
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
         }
-        .card h3 { margin-top: 0; color: var(--primary); }
+        .card h3 { margin-top: 0; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+
         .tag {
             display: inline-block;
             background: #e0f2fe;
             color: #0369a1;
-            padding: 0.2rem 0.6rem;
+            padding: 0.15rem 0.5rem;
             border-radius: 999px;
-            font-size: 0.8rem;
-            margin-right: 0.4rem;
+            font-size: 0.75rem;
+            margin-right: 0.3rem;
             font-weight: 500;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.2rem;
         }
 
         table {
@@ -112,26 +106,25 @@
             box-shadow: var(--shadow);
             border-radius: 8px;
             overflow: hidden;
+            font-size: 0.95rem;
         }
-        th, td {
-            padding: 0.8rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
+        th, td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 1px solid var(--border); }
         th { background: #f1f5f9; color: var(--text); font-weight: 600; }
         tr:last-child td { border-bottom: none; }
 
         .k-level { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
         .k-box {
             flex: 1;
-            min-width: 200px;
+            min-width: 220px;
             background: #f8fafc;
             border: 1px solid var(--border);
             padding: 1rem;
             border-radius: 8px;
         }
-        .k-box h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .k-box h4 { color: var(--primary); margin-bottom: 0.3rem; }
 
+        .highlight { background: #fef3c7; padding: 0.2rem 0.4rem; border-radius: 4px; font-weight: 500; }
+        
         footer {
             text-align: center;
             margin-top: 3rem;
@@ -141,10 +134,11 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
+        @media (max-width: 650px) {
+            header h1 { font-size: 1.9rem; }
             .container { padding: 0; }
             .card { padding: 1rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -152,161 +146,215 @@
     <div class="container">
         <header>
             <h1>ISTQB CTFL v4.0</h1>
-            <p>Resumen Esencial del Programa de Estudio de Nivel Básico</p>
+            <p>Guía de Estudio Detallada · Nivel Básico · Comité Internacional ISTQB®</p>
         </header>
 
         <div class="stats">
-            <div class="stat-card"><strong>6</strong> Capítulos</div>
-            <div class="stat-card"><strong>1135</strong> Min. de Instrucción</div>
-            <div class="stat-card"><strong>14</strong> Resultados de Negocio</div>
-            <div class="stat-card"><strong>3</strong> Niveles Cognitivos</div>
+            <div class="stat-card"><strong>6</strong> Capítulos Evaluables</div>
+            <div class="stat-card"><strong>1135</strong> Min. Instrucción Mín.</div>
+            <div class="stat-card"><strong>40</strong> Objetivos de Aprendizaje</div>
+            <div class="stat-card"><strong>K1–K3</strong> Niveles Cognitivos</div>
         </div>
 
+        <!-- CAPÍTULO 1 -->
         <section class="card">
-            <h2>📘 Capítulo 1: Fundamentos de la Prueba</h2>
-            <p>Base conceptual del testing: qué es, por qué se hace y cómo se organiza.</p>
+            <h2>📘 Cap. 1: Fundamentos de la Prueba (180 min)</h2>
             <div class="grid-2">
                 <div>
-                    <h3>Objetivos & Principios</h3>
+                    <h3>🎯 Qué y Por Qué Probar</h3>
                     <ul>
-                        <li><strong>7 Principios:</strong> Muestra presencia de defectos, pruebas exhaustivas imposibles, pruebas tempranas ahorran, defectos se agrupan, desgaste de pruebas, depende del contexto, falacia de ausencia de defectos.</li>
-                        <li><strong>Objetivos:</strong> Evaluar artefactos, desencadenar fallas, garantizar cobertura, reducir riesgos, verificar requisitos, validar con usuarios, generar confianza.</li>
+                        <li><strong>Definición:</strong> Conjunto de actividades para descubrir defectos y evaluar la calidad de artefactos (objetos de prueba). Incluye pruebas <em>dinámicas</em> (ejecución) y <em>estáticas</em> (revisión/análisis sin ejecución).</li>
+                        <li><strong>Verificación vs Validación:</strong> ¿Construimos el producto correctamente? (vs) ¿Construimos el producto correcto?</li>
+                        <li><strong>Objetivos típicos (9):</strong> Evaluar artefactos, desencadenar fallas, garantizar cobertura, reducir riesgos, verificar requisitos, cumplir normativas, informar a stakeholders, generar confianza y validar expectativas.</li>
+                        <li><strong>Pruebas ≠ Depuración:</strong> Las pruebas encuentran fallas/defectos. La depuración reproduce, diagnostica la causa raíz y corrige. Luego se hace prueba de confirmación y regresión.</li>
+                        <li><strong>QA vs Pruebas:</strong> QA es preventivo y orientado a procesos. Las pruebas son correctivas (Control de Calidad) y orientadas al producto.</li>
+                        <li><strong>Errores → Defectos → Fallas:</strong> Humanos cometen errores, generan defectos (bugs), que al ejecutarse causan fallas. No toda falla viene de un defecto (puede ser ambiental).</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Proceso & Roles</h3>
+                    <h3>⚙️ Principios, Proceso y Roles</h3>
                     <ul>
-                        <li><strong>Actividades:</strong> Planificación, Monitoreo/Control, Análisis, Diseño, Implementación, Ejecución, Cierre.</li>
-                        <li><strong>Testware:</strong> Planes, casos, scripts, datos, informes, entorno.</li>
-                        <li><strong>Trazabilidad:</strong> Vincula base de prueba → testware → resultados → defectos. Clave para cobertura y auditorías.</li>
-                        <li><span class="tag">K1</span> Enfoque de Equipo Completo <span class="tag">K2</span> Independencia de Pruebas</li>
+                        <li><strong>7 Principios:</strong> Muestra presencia (no ausencia) de defectos · Exhaustivas imposibles · Tempranas ahorran · Defectos se agrupan (Pareto) · Se desgastan (necesitan actualización) · Dependen del contexto · Falacia de ausencia de defectos.</li>
+                        <li><strong>Actividades del Proceso:</strong> Planificación · Monitoreo y Control · Análisis · Diseño · Implementación · Ejecución · Cierre. (Iterativas/paralelas, no estrictamente lineales).</li>
+                        <li><strong>Testware:</strong> Artefactos generados: planes, casos, scripts, datos, entornos (stubs/simuladores), registros, informes.</li>
+                        <li><strong>Trazabilidad:</strong> Vincula base de prueba → testware → resultados → defectos. Esencial para medir cobertura, gestionar cambios y auditar.</li>
+                        <li><strong>Roles:</strong> <span class="tag">Gestión</span> Planifica, monitorea, controla, cierra. <span class="tag">Ingeniero</span> Analiza, diseña, implementa, ejecuta.</li>
+                        <li><strong>Habilidades Clave:</strong> Comunicación constructiva, pensamiento crítico/analítico, rigurosidad, curiosidad, conocimiento técnico y del dominio.</li>
+                        <li><strong>Independencia vs Equipo Completo:</strong> La independencia reduce sesgos cognitivos. El enfoque de equipo completo (XP) comparte responsabilidad de calidad, mejora sinergia y comunicación. Se equilibran según criticidad del proyecto.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- CAPÍTULO 2 -->
         <section class="card">
-            <h2>🔄 Capítulo 2: Pruebas en el Ciclo de Vida (SDLC)</h2>
-            <p>Integración del testing en modelos de desarrollo y enfoques modernos.</p>
+            <h2>🔄 Cap. 2: Pruebas en el Ciclo de Vida - SDLC (130 min)</h2>
             <div class="grid-2">
                 <div>
-                    <h3>Modelos & Enfoques</h3>
+                    <h3>🌐 Modelos y Enfoques Modernos</h3>
                     <ul>
-                        <li><strong>Shift-Left:</strong> Probar antes (revisiones, casos antes de código, CI/CD).</li>
-                        <li><strong>Test-First:</strong> TDD, ATDD, BDD (Given/When/Then).</li>
-                        <li><strong>DevOps:</strong> Sinergia Dev+Ops, CI/CD, retroalimentación rápida, automatización.</li>
-                        <li><strong>Retrospectivas:</strong> Mejora continua al final de iteraciones/proyectos.</li>
+                        <li><strong>Impacto del SDLC:</strong> Secuencial (pruebas tardías, docs extensos) vs Iterativo/Ágil (entregas frecuentes, docs ligeros, automatización fuerte, pruebas en cada iteración).</li>
+                        <li><strong>Buenas Prácticas Universales:</strong> Actividad de prueba por cada actividad de desarrollo · Objetivos distintos por nivel · Inicio temprano del análisis/diseño · Revisión de borradores ASAP.</li>
+                        <li><strong>Test-First:</strong> <span class="tag">TDD</span> Código guiado por pruebas unitarias. <span class="tag">ATDD</span> Casos derivados de criterios de aceptación antes de desarrollar. <span class="tag">BDD</span> Comportamiento en lenguaje natural (Given/When/Then) traducible a código.</li>
+                        <li><strong>DevOps:</strong> Sinergia Dev+Ops, CI/CD, feedback rápido, pipelines automatizados. Reduce riesgo de regresión, pero requiere mantenimiento de herramientas y sigue necesitando pruebas manuales de usuario.</li>
+                        <li><strong>Shift-Left:</strong> Probar antes (revisión specs, casos antes de código, análisis estático, pruebas no funcionales tempranas). Aumenta costo inicial, ahorra significativamente después.</li>
+                        <li><strong>Retrospectivas:</strong> Qué funcionó, qué mejorar, cómo implementar. Clave para mejora continua y cultura de calidad.</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Niveles & Tipos</h3>
+                    <h3>📊 Niveles, Tipos y Mantenimiento</h3>
                     <ul>
-                        <li><strong>Niveles:</strong> Componente, Integración de Componentes, Sistema, Integración de Sistemas, Aceptación.</li>
-                        <li><strong>Tipos:</strong> Funcional, No Funcional, Caja Negra, Caja Blanca.</li>
-                        <li><strong>Confirmación vs Regresión:</strong> Verifica corrección vs. asegura que no se rompió nada más.</li>
-                        <li><strong>Mantenimiento:</strong> Correctivo, adaptativo, perfectivo. Activado por cambios, migraciones o retiros.</li>
+                        <li><strong>5 Niveles de Prueba:</strong> 
+                          <span class="tag">Componentes</span> Aislados (unitarias, devs) · 
+                          <span class="tag">Int. Componentes</span> Interfaces/interacciones · 
+                          <span class="tag">Sistema</span> Comportamiento integral (funcional+no funcional) · 
+                          <span class="tag">Int. Sistemas</span> Con sistemas externos/servicios · 
+                          <span class="tag">Aceptación</span> Validación negocio/usuario (UAT, alfa/beta, contractual).</li>
+                        <li><strong>4 Tipos Principales:</strong> 
+                          <span class="tag">Funcional</span> "Qué hace" · 
+                          <span class="tag">No Funcional</span> "Qué tan bien" (ISO 25010: rendimiento, seguridad, usabilidad, etc.) · 
+                          <span class="tag">Caja Negra</span> Basada en especificaciones externas · 
+                          <span class="tag">Caja Blanca</span> Basada en estructura/código interno.</li>
+                        <li><strong>Confirmación vs Regresión:</strong> Confirmación verifica que el defecto se corrigió. Regresión asegura que el cambio no rompió nada existente. Idealmente automatizadas.</li>
+                        <li><strong>Pruebas de Mantenimiento:</strong> Correctivo, adaptativo, perfectivo. Activadores: modificaciones/hotfixes, migraciones de plataforma/entorno, retiro de aplicación. Alcance depende de riesgo, tamaño del sistema y magnitud del cambio.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- CAPÍTULO 3 -->
         <section class="card">
-            <h2>📝 Capítulo 3: Pruebas Estáticas</h2>
-            <p>Evaluación sin ejecutar el código: revisiones y análisis estático.</p>
-            <ul>
-                <li><strong>Valor:</strong> Detecta defectos temprano, encuentra errores en rutas inalcanzables, evalúa legibilidad y consistencia, reduce costo de corrección.</li>
-                <li><strong>Proceso de Revisión (5 pasos):</strong> Planificación → Inicio → Revisión Individual → Comunicación/Análisis → Reparación/Informe.</li>
-                <li><strong>Roles:</strong> Director, Autor, Moderador, Escriba, Revisor, Líder de Revisión.</li>
-                <li><strong>Tipos:</strong> Informal, Guiada, Técnica, Inspección (más formal, métricas, autor no es líder/escriba).</li>
-                <li><strong>Factores de Éxito:</strong> Objetivos claros, tamaño manejable, tiempo de preparación, soporte directivo, cultura de mejora.</li>
-            </ul>
-        </section>
-
-        <section class="card">
-            <h2>🧩 Capítulo 4: Análisis y Diseño de Pruebas</h2>
-            <p>Técnicas sistemáticas para derivar casos de prueba eficientes.</p>
+            <h2>📝 Cap. 3: Pruebas Estáticas (80 min)</h2>
             <div class="grid-2">
                 <div>
-                    <h3>Caja Negra (Especificación)</h3>
+                    <h3>🔍 Conceptos y Valor</h3>
                     <ul>
-                        <li><strong>Partición de Equivalencia:</strong> Divide datos en grupos válidos/inválidos.</li>
-                        <li><strong>Valores Límite (2 y 3 valores):</strong> Enfocado en bordes donde suelen ocurrir errores.</li>
-                        <li><strong>Tabla de Decisión:</strong> Lógica compleja, combinaciones de condiciones → acciones.</li>
-                        <li><strong>Transición de Estado:</strong> Estados, eventos, transiciones válidas/inválidas.</li>
+                        <li><strong>Definición:</strong> Evaluación de artefactos <em>sin ejecutar</em> el software. Incluye revisiones humanas y análisis estático automático (linters, métricas, correctores).</li>
+                        <li><strong>Productos Evaluables:</strong> Requisitos, historias de usuario, diseños, código, planes de prueba, contratos, modelos. (No aplicable a binarios cerrados o ilegibles).</li>
+                        <li><strong>Valor Agregado:</strong> Detección extremadamente temprana (cumple "pruebas tempranas"), encuentra defectos en rutas inalcanzables, mejora legibilidad/consistencia, genera entendimiento compartido entre stakeholders, reduce costos de corrección drásticamente.</li>
+                        <li><strong>Estáticas vs Dinámicas:</strong> Estáticas encuentran defectos directamente y miden mantenibilidad/seguridad. Dinámicas producen fallas y miden rendimiento/comportamiento en ejecución. Son complementarias.</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Otros Enfoques</h3>
+                    <h3>📋 Proceso de Revisión y Tipos</h3>
                     <ul>
-                        <li><strong>Caja Blanca (Estructura):</strong> Cobertura de Sentencias y Ramas (rama incluye sentencia).</li>
-                        <li><strong>Basadas en Experiencia:</strong> Predicción de errores, Exploratoria (sesiones), Listas de comprobación.</li>
-                        <li><strong>Colaborativos:</strong> Historias de usuario (INVEST), Criterios de Aceptación, ATDD (taller de especificación → casos → automatización).</li>
+                        <li><strong>Proceso (5 fases ISO/IEC 20246):</strong> 
+                          1. Planificación (alcance, criterios, esfuerzo) → 
+                          2. Inicio (preparar participantes/accesos) → 
+                          3. Revisión Individual (detección de anomalías) → 
+                          4. Comunicación/Análisis (reunión, discusión, clasificación) → 
+                          5. Reparación/Informes (correcciones, cierre, lecciones).</li>
+                        <li><strong>Roles Clave:</strong> Director (autoriza/recursos) · Autor (crea/corrige) · Moderador (facilita) · Escriba (registra) · Revisor (evalúa) · Líder (organiza).</li>
+                        <li><strong>Tipos de Revisión (de menor a mayor formalidad):</strong> 
+                          <span class="tag">Informal</span> Sin proceso definido · 
+                          <span class="tag">Guiada</span> Dirigida por autor, múltiples objetivos · 
+                          <span class="tag">Técnica</span> Moderador técnico, consenso, detección de anomalías · 
+                          <span class="tag">Inspección</span> Máxima formalidad, métricas, autor NO es líder/escriba, objetivo principal: maximizar hallazgos.</li>
+                        <li><strong>Factores de Éxito:</strong> Objetivos claros, tipo adecuado al contexto, trozos pequeños, tiempo de preparación suficiente, apoyo gerencial, cultura de mejora (no evaluación de personas), formación y facilitación efectiva.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- CAPÍTULO 4 -->
         <section class="card">
-            <h2>📊 Capítulo 5: Gestión de las Actividades de Prueba</h2>
-            <p>Planificación, control de riesgos, métricas y gestión de defectos.</p>
-            <ul>
-                <li><strong>Planificación:</strong> Plan de prueba, criterios de entrada/salida (Definición de Listo/Hecho), estimación (proporciones, extrapolación, Delphi, 3 puntos), priorización (riesgo, cobertura, requisitos).</li>
-                <li><strong>Modelos Ágiles:</strong> Pirámide de Prueba (unitarias → servicio → UI), Cuadrantes de Prueba (Q1-Q4: tecnología/negocio × apoyo/crítica).</li>
-                <li><strong>Gestión de Riesgos:</strong> Proyecto (cronograma, equipo, proveedores) vs Producto (funcionalidad, seguridad, rendimiento). Análisis → Control (mitigación, monitoreo).</li>
-                <li><strong>Monitoreo & Cierre:</strong> Métricas (progreso, defectos, cobertura, riesgo), informes de progreso y finalización, lecciones aprendidas.</li>
-                <li><strong>Configuración & Defectos:</strong> Control de versiones, líneas base, trazabilidad. Informe de defecto: ID, título, contexto, pasos, esperado/real, severidad, prioridad, estado.</li>
-            </ul>
-        </section>
-
-        <section class="card">
-            <h2>🛠️ Capítulo 6: Herramientas de Prueba</h2>
-            <p>Soporte tecnológico y automatización.</p>
+            <h2>🧩 Cap. 4: Análisis y Diseño de Pruebas (390 min)</h2>
             <div class="grid-2">
                 <div>
-                    <h3>Tipos de Herramientas</h3>
-                    <p>Gestión, estáticas, diseño/implementación, ejecución/cobertura, no funcionales, DevOps/CI-CD, colaboración, virtualización.</p>
+                    <h3>📦 Caja Negra (Especificación)</h3>
+                    <ul>
+                        <li><strong>Partición de Equivalencia (EP):</strong> Divide datos en grupos válidos/inválidos. Prueba 1 valor por partición. Cobertura 100% = todas las particiones ejercidas. "Cobertura de Cada Elección" para múltiples parámetros.</li>
+                        <li><strong>Valores Límite (BVA):</strong> Enfocado en bordes (donde hay más errores). <span class="highlight">BVA 2 valores:</span> límite + vecino adyacente. <span class="highlight">BVA 3 valores:</span> límite + ambos vecinos (más riguroso, detecta errores de comparación como ≤ vs =).</li>
+                        <li><strong>Tabla de Decisión:</strong> Para lógica compleja con combinaciones de condiciones → acciones. Columnas = reglas factibles. Minimizable. Cobertura 100% = ejercer todas las columnas viables.</li>
+                        <li><strong>Transición de Estado:</strong> Modela estados, eventos, guardas y acciones. Diagrama o Tabla de Estados. Criterios: <span class="tag">Todos los estados</span> (débil) · <span class="tag">Transiciones válidas</span> (estándar) · <span class="tag">Todas las transiciones</span> (válidas+inválidas, obligatorio en crítico).</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>Beneficios & Riesgos</h3>
+                    <h3>🔬 Caja Blanca, Experiencia y Colaboración</h3>
                     <ul>
-                        <li>✅ Ahorro tiempo, consistencia, métricas objetivas, ejecución rápida, enfoque en diseño creativo.</li>
-                        <li>⚠️ Expectativas irreales, costo de mantenimiento, dependencia de proveedor, no reemplaza pensamiento crítico, incompatibilidades.</li>
+                        <li><strong>Caja Blanca (Estructura):</strong> <span class="tag">Sentencias:</span> 100% ejecuta todas las líneas, pero no garantiza probar toda la lógica. <span class="tag">Ramas:</span> Cubre caminos verdaderos/falsos de decisiones. <em>100% Ramas ⇒ 100% Sentencias</em> (no viceversa). Valor: detecta defectos con specs vagas, mide cobertura objetivamente.</li>
+                        <li><strong>Basadas en Experiencia:</strong> <span class="tag">Predicción de Errores:</span> Listas de fallos comunes/ataques de faltas. <span class="tag">Exploratorias:</span> Diseño/ejecución/aprendizaje simultáneos (sesiones con cartas de prueba). Útil con specs pobres o alta presión. <span class="tag">Listas de Comprobación:</span> Checklists de preguntas/heurísticas. Actualizables, dan consistencia sin rigidez excesiva.</li>
+                        <li><strong>Enfoques Colaborativos:</strong> 
+                          <span class="tag">Historias de Usuario:</span> 3 C's (Card, Conversation, Confirmation). Criterios INVEST. 
+                          <span class="tag">Criterios de Aceptación:</span> Escenarios (Given/When/Then) o Reglas. Definen alcance y consenso. 
+                          <span class="tag">ATDD:</span> Taller de especificación → casos antes de código → positivos → negativos → no funcionales → automatización como requisitos ejecutables.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <h2>🎯 Resultados de Negocio (FL-BO1 a FL-BO14)</h2>
-        <table>
-            <tr><th>Código</th><th>Competencia Clave</th></tr>
-            <tr><td>FL-BO1/2</td><td>Comprender qué son las pruebas y sus conceptos fundamentales</td></tr>
-            <tr><td>FL-BO3/6</td><td>Adaptar enfoque/actividades al contexto y alinear con el SDLC</td></tr>
-            <tr><td>FL-BO4/8</td><td>Evaluar documentación y redactar informes de defectos claros</td></tr>
-            <tr><td>FL-BO5/9</td><td>Aumentar eficacia/eficiencia y comprender factores de priorización/esfuerzo</td></tr>
-            <tr><td>FL-BO7/13</td><td>Aplicar principios de gestión y comprender impacto del riesgo</td></tr>
-            <tr><td>FL-BO10/12</td><td>Trabajar en equipos multifuncionales e identificar habilidades esenciales</td></tr>
-            <tr><td>FL-BO11/14</td><td>Conocer riesgos/beneficios de automatización y comunicar progreso/calidad</td></tr>
-        </table>
+        <!-- CAPÍTULO 5 -->
+        <section class="card">
+            <h2>📊 Cap. 5: Gestión de las Actividades de Prueba (335 min)</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>📅 Planificación y Estimación</h3>
+                    <ul>
+                        <li><strong>Plan de Prueba:</strong> Contexto, objetivos, alcance, supuestos, stakeholders, comunicación, registro de riesgos, enfoque (niveles, tipos, técnicas, criterios entrada/salida), presupuesto y cronograma.</li>
+                        <li><strong>Criterios de Entrada/Salida:</strong> <span class="tag">Entrada</span> (Definición de Listo): recursos, testware, calidad inicial disponible. <span class="tag">Salida</span> (Definición de Hecho): cobertura alcanzada, defectos reportados, regresión automatizada, o fin de presupuesto/tiempo aceptado por riesgo.</li>
+                        <li><strong>Estimación (4 técnicas):</strong> <span class="tag">Proporciones:</span> ratios históricos (ej. 3:2 dev:test). <span class="tag">Extrapolación:</span> proyectar desde iteraciones previas. <span class="tag">Delphi Banda Ancha:</span> consenso iterativo anónimo (Planning Poker). <span class="tag">3 Puntos:</span> E=(a+4m+b)/6, Desviación SD=(b-a)/6.</li>
+                        <li><strong>Priorización:</strong> Basada en riesgo (críticos primero), cobertura (máximo impacto primero), requisitos (valor negocio), o dependencias técnicas/recursos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>⚠️ Riesgos, Métricas y Defectos</h3>
+                    <ul>
+                        <li><strong>Riesgos:</strong> Probabilidad × Impacto = Nivel. <span class="tag">Proyecto:</span> cronograma, equipo, proveedores. <span class="tag">Producto:</span> funcionalidad, seguridad, rendimiento, usabilidad. Control = Mitigación (pruebas, revisiones, independencia) + Monitoreo (seguimiento y detección emergentes).</li>
+                        <li><strong>Modelos Ágiles:</strong> <span class="tag">Pirámide:</span> Muchas unitarias (rápidas/aisladas) → Servicios → Poca UI (lentas/frágiles). <span class="tag">Cuadrantes:</span> Q1 (Tech/Apoyo), Q2 (Negocio/Apoyo), Q3 (Negocio/Crítica), Q4 (Tech/Crítica).</li>
+                        <li><strong>Monitoreo/Control/Cierre:</strong> Métricas (progreso, defectos, cobertura, costo, riesgo residual). Informes de progreso (ajuste continuo) vs Cierre (evaluación final, desviaciones, lecciones aprendidas). Comunicación adaptada a audiencia (tableros CI/CD, verbales, formales).</li>
+                        <li><strong>Gestión de Configuración:</strong> Identificación única, control de versiones, líneas base, reproducibilidad de entornos/resultados, trazabilidad integral.</li>
+                        <li><strong>Gestión de Defectos:</strong> Flujo: reporte → análisis → clasificación → corrección → confirmación → cierre. Informe debe incluir: ID, título, contexto, pasos reproducibles, esperado vs real, severidad (impacto), prioridad (urgencia), estado, referencias.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <h2>🧠 Niveles Cognitivos del Examen</h2>
+        <!-- CAPÍTULO 6 -->
+        <section class="card">
+            <h2>🛠️ Cap. 6: Herramientas de Prueba (20 min)</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>📦 Tipos y Soporte</h3>
+                    <ul>
+                        <li><strong>Gestión:</strong> Ciclo de vida, requisitos, casos, defectos, configuración.</li>
+                        <li><strong>Estáticas:</strong> Revisiones asistidas, análisis de código (linters), métricas, seguridad.</li>
+                        <li><strong>Diseño/Implementación:</strong> Generación de casos, datos, scripts, procedimientos.</li>
+                        <li><strong>Ejecución/Cobertura:</strong> Automatización de suites, medición de sentencias/ramas, comparación de resultados.</li>
+                        <li><strong>No Funcionales:</strong> Rendimiento, carga, estrés, seguridad, usabilidad.</li>
+                        <li><strong>DevOps/CI-CD:</strong> Pipelines, compilación, despliegue, contenedores, virtualización.</li>
+                        <li><strong>Colaboración:</strong> Chat, tableros, documentación compartida.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>⚖️ Beneficios y Riesgos</h3>
+                    <ul>
+                        <li><strong>✅ Beneficios:</strong> Ahorro en trabajo repetitivo (regresión), consistencia y repetibilidad, objetividad en métricas, ejecución rápida, feedback temprano, libera tiempo para diseño creativo y exploratorio.</li>
+                        <li><strong>⚠️ Riesgos:</strong> Expectativas irreales ("la herramienta lo hace todo"), subestimación de costo/mantenimiento de scripts, dependencia del proveedor, incompatibilidad de plataformas, código abierto abandonado, elección inadecuada para normativas, y sobre todo: <span class="highlight">ignorar el pensamiento crítico humano</span>.</li>
+                        <li><strong>Nota Clave:</strong> Las herramientas son un soporte, no reemplazan el conocimiento, las técnicas ni la independencia de criterio del probador.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <h2>🧠 Niveles Cognitivos del Examen (K1–K3)</h2>
         <div class="k-level">
             <div class="k-box">
                 <h4>K1 – Recordar</h4>
-                <p>Identificar, reconocer o recordar términos, conceptos y definiciones clave.</p>
+                <p>Identificar, reconocer o recordar términos, conceptos y definiciones clave. <em>Verbos: identificar, recordar, reconocer.</em></p>
             </div>
             <div class="k-box">
                 <h4>K2 – Comprender</h4>
-                <p>Explicar, resumir, comparar, contrastar, distinguir y dar ejemplos de conceptos.</p>
+                <p>Explicar, resumir, comparar, contrastar, distinguir y dar ejemplos. <em>Verbos: explicar, resumir, comparar, distinguir, ejemplificar.</em></p>
             </div>
             <div class="k-box">
                 <h4>K3 – Aplicar</h4>
-                <p>Utilizar técnicas, procedimientos o algoritmos para resolver problemas o derivar casos de prueba en contextos dados.</p>
+                <p>Utilizar técnicas o procedimientos en un contexto dado (ej. derivar casos de prueba, estimar, redactar informes). <em>Verbos: aplicar, usar, preparar, calcular.</em></p>
             </div>
         </div>
 
         <footer>
-            <p>📄 Resumen basado en el <strong>ISTQB Certified Tester Foundation Level v4.0</strong> (2023-04-21).<br>
-            Diseñado para estudio rápido y repaso. No sustituye la lectura completa del syllabus oficial.</p>
+            <p>📄 Resumen detallado basado en el <strong>ISTQB Certified Tester Foundation Level v4.0</strong> (2023-04-21).<br>
+            Diseñado para estudio estructurado y repaso intensivo. No sustituye la lectura completa del syllabus oficial ni la práctica de ejercicios.</p>
         </footer>
     </div>
 </body>
