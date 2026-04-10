@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTQB CTFL v4.0 | Resumen Esencial</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-light: #475569;
+            --accent: #0ea5e9;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .stat-card {
+            background: var(--card);
+            padding: 1.2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .stat-card strong { display: block; font-size: 1.8rem; color: var(--primary); }
+        .stat-card span { color: var(--text-light); font-size: 0.95rem; }
+
+        h2 {
+            color: var(--primary-dark);
+            margin: 2rem 0 1rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--accent);
+        }
+        h3 { color: var(--text); margin: 1.2rem 0 0.6rem; }
+        p, ul, ol { margin-bottom: 1rem; }
+        ul { padding-left: 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .card h3 { margin-top: 0; color: var(--primary); }
+        .tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
+            font-weight: 500;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            margin: 1rem 0;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { background: #f1f5f9; color: var(--text); font-weight: 600; }
+        tr:last-child td { border-bottom: none; }
+
+        .k-level { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
+        .k-box {
+            flex: 1;
+            min-width: 200px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .k-box h4 { color: var(--primary); margin-bottom: 0.5rem; }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .container { padding: 0; }
+            .card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ISTQB CTFL v4.0</h1>
+            <p>Resumen Esencial del Programa de Estudio de Nivel Básico</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card"><strong>6</strong> Capítulos</div>
+            <div class="stat-card"><strong>1135</strong> Min. de Instrucción</div>
+            <div class="stat-card"><strong>14</strong> Resultados de Negocio</div>
+            <div class="stat-card"><strong>3</strong> Niveles Cognitivos</div>
+        </div>
+
+        <section class="card">
+            <h2>📘 Capítulo 1: Fundamentos de la Prueba</h2>
+            <p>Base conceptual del testing: qué es, por qué se hace y cómo se organiza.</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Objetivos & Principios</h3>
+                    <ul>
+                        <li><strong>7 Principios:</strong> Muestra presencia de defectos, pruebas exhaustivas imposibles, pruebas tempranas ahorran, defectos se agrupan, desgaste de pruebas, depende del contexto, falacia de ausencia de defectos.</li>
+                        <li><strong>Objetivos:</strong> Evaluar artefactos, desencadenar fallas, garantizar cobertura, reducir riesgos, verificar requisitos, validar con usuarios, generar confianza.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Proceso & Roles</h3>
+                    <ul>
+                        <li><strong>Actividades:</strong> Planificación, Monitoreo/Control, Análisis, Diseño, Implementación, Ejecución, Cierre.</li>
+                        <li><strong>Testware:</strong> Planes, casos, scripts, datos, informes, entorno.</li>
+                        <li><strong>Trazabilidad:</strong> Vincula base de prueba → testware → resultados → defectos. Clave para cobertura y auditorías.</li>
+                        <li><span class="tag">K1</span> Enfoque de Equipo Completo <span class="tag">K2</span> Independencia de Pruebas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>🔄 Capítulo 2: Pruebas en el Ciclo de Vida (SDLC)</h2>
+            <p>Integración del testing en modelos de desarrollo y enfoques modernos.</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Modelos & Enfoques</h3>
+                    <ul>
+                        <li><strong>Shift-Left:</strong> Probar antes (revisiones, casos antes de código, CI/CD).</li>
+                        <li><strong>Test-First:</strong> TDD, ATDD, BDD (Given/When/Then).</li>
+                        <li><strong>DevOps:</strong> Sinergia Dev+Ops, CI/CD, retroalimentación rápida, automatización.</li>
+                        <li><strong>Retrospectivas:</strong> Mejora continua al final de iteraciones/proyectos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Niveles & Tipos</h3>
+                    <ul>
+                        <li><strong>Niveles:</strong> Componente, Integración de Componentes, Sistema, Integración de Sistemas, Aceptación.</li>
+                        <li><strong>Tipos:</strong> Funcional, No Funcional, Caja Negra, Caja Blanca.</li>
+                        <li><strong>Confirmación vs Regresión:</strong> Verifica corrección vs. asegura que no se rompió nada más.</li>
+                        <li><strong>Mantenimiento:</strong> Correctivo, adaptativo, perfectivo. Activado por cambios, migraciones o retiros.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>📝 Capítulo 3: Pruebas Estáticas</h2>
+            <p>Evaluación sin ejecutar el código: revisiones y análisis estático.</p>
+            <ul>
+                <li><strong>Valor:</strong> Detecta defectos temprano, encuentra errores en rutas inalcanzables, evalúa legibilidad y consistencia, reduce costo de corrección.</li>
+                <li><strong>Proceso de Revisión (5 pasos):</strong> Planificación → Inicio → Revisión Individual → Comunicación/Análisis → Reparación/Informe.</li>
+                <li><strong>Roles:</strong> Director, Autor, Moderador, Escriba, Revisor, Líder de Revisión.</li>
+                <li><strong>Tipos:</strong> Informal, Guiada, Técnica, Inspección (más formal, métricas, autor no es líder/escriba).</li>
+                <li><strong>Factores de Éxito:</strong> Objetivos claros, tamaño manejable, tiempo de preparación, soporte directivo, cultura de mejora.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🧩 Capítulo 4: Análisis y Diseño de Pruebas</h2>
+            <p>Técnicas sistemáticas para derivar casos de prueba eficientes.</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Caja Negra (Especificación)</h3>
+                    <ul>
+                        <li><strong>Partición de Equivalencia:</strong> Divide datos en grupos válidos/inválidos.</li>
+                        <li><strong>Valores Límite (2 y 3 valores):</strong> Enfocado en bordes donde suelen ocurrir errores.</li>
+                        <li><strong>Tabla de Decisión:</strong> Lógica compleja, combinaciones de condiciones → acciones.</li>
+                        <li><strong>Transición de Estado:</strong> Estados, eventos, transiciones válidas/inválidas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Otros Enfoques</h3>
+                    <ul>
+                        <li><strong>Caja Blanca (Estructura):</strong> Cobertura de Sentencias y Ramas (rama incluye sentencia).</li>
+                        <li><strong>Basadas en Experiencia:</strong> Predicción de errores, Exploratoria (sesiones), Listas de comprobación.</li>
+                        <li><strong>Colaborativos:</strong> Historias de usuario (INVEST), Criterios de Aceptación, ATDD (taller de especificación → casos → automatización).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>📊 Capítulo 5: Gestión de las Actividades de Prueba</h2>
+            <p>Planificación, control de riesgos, métricas y gestión de defectos.</p>
+            <ul>
+                <li><strong>Planificación:</strong> Plan de prueba, criterios de entrada/salida (Definición de Listo/Hecho), estimación (proporciones, extrapolación, Delphi, 3 puntos), priorización (riesgo, cobertura, requisitos).</li>
+                <li><strong>Modelos Ágiles:</strong> Pirámide de Prueba (unitarias → servicio → UI), Cuadrantes de Prueba (Q1-Q4: tecnología/negocio × apoyo/crítica).</li>
+                <li><strong>Gestión de Riesgos:</strong> Proyecto (cronograma, equipo, proveedores) vs Producto (funcionalidad, seguridad, rendimiento). Análisis → Control (mitigación, monitoreo).</li>
+                <li><strong>Monitoreo & Cierre:</strong> Métricas (progreso, defectos, cobertura, riesgo), informes de progreso y finalización, lecciones aprendidas.</li>
+                <li><strong>Configuración & Defectos:</strong> Control de versiones, líneas base, trazabilidad. Informe de defecto: ID, título, contexto, pasos, esperado/real, severidad, prioridad, estado.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🛠️ Capítulo 6: Herramientas de Prueba</h2>
+            <p>Soporte tecnológico y automatización.</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Tipos de Herramientas</h3>
+                    <p>Gestión, estáticas, diseño/implementación, ejecución/cobertura, no funcionales, DevOps/CI-CD, colaboración, virtualización.</p>
+                </div>
+                <div>
+                    <h3>Beneficios & Riesgos</h3>
+                    <ul>
+                        <li>✅ Ahorro tiempo, consistencia, métricas objetivas, ejecución rápida, enfoque en diseño creativo.</li>
+                        <li>⚠️ Expectativas irreales, costo de mantenimiento, dependencia de proveedor, no reemplaza pensamiento crítico, incompatibilidades.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <h2>🎯 Resultados de Negocio (FL-BO1 a FL-BO14)</h2>
+        <table>
+            <tr><th>Código</th><th>Competencia Clave</th></tr>
+            <tr><td>FL-BO1/2</td><td>Comprender qué son las pruebas y sus conceptos fundamentales</td></tr>
+            <tr><td>FL-BO3/6</td><td>Adaptar enfoque/actividades al contexto y alinear con el SDLC</td></tr>
+            <tr><td>FL-BO4/8</td><td>Evaluar documentación y redactar informes de defectos claros</td></tr>
+            <tr><td>FL-BO5/9</td><td>Aumentar eficacia/eficiencia y comprender factores de priorización/esfuerzo</td></tr>
+            <tr><td>FL-BO7/13</td><td>Aplicar principios de gestión y comprender impacto del riesgo</td></tr>
+            <tr><td>FL-BO10/12</td><td>Trabajar en equipos multifuncionales e identificar habilidades esenciales</td></tr>
+            <tr><td>FL-BO11/14</td><td>Conocer riesgos/beneficios de automatización y comunicar progreso/calidad</td></tr>
+        </table>
+
+        <h2>🧠 Niveles Cognitivos del Examen</h2>
+        <div class="k-level">
+            <div class="k-box">
+                <h4>K1 – Recordar</h4>
+                <p>Identificar, reconocer o recordar términos, conceptos y definiciones clave.</p>
+            </div>
+            <div class="k-box">
+                <h4>K2 – Comprender</h4>
+                <p>Explicar, resumir, comparar, contrastar, distinguir y dar ejemplos de conceptos.</p>
+            </div>
+            <div class="k-box">
+                <h4>K3 – Aplicar</h4>
+                <p>Utilizar técnicas, procedimientos o algoritmos para resolver problemas o derivar casos de prueba en contextos dados.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>📄 Resumen basado en el <strong>ISTQB Certified Tester Foundation Level v4.0</strong> (2023-04-21).<br>
+            Diseñado para estudio rápido y repaso. No sustituye la lectura completa del syllabus oficial.</p>
+        </footer>
+    </div>
+</body>
+</html>
